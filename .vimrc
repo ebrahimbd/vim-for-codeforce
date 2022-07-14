@@ -35,7 +35,8 @@ autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
 
 
 call plug#begin()
-    Plug 'scrooloose/syntastic'
+     
+    
     Plug 'vim-airline/vim-airline'
     Plug 'preservim/NERDTree'
     Plug 'Xuyuanp/nerdtree-git-plugin'
@@ -122,13 +123,14 @@ nmap <F8> :TagbarToggle<CR>
 map <F12> :q!<CR>
 
 
-"move line"
-nnoremap <A-j> :m .+1<CR>==
-nnoremap <A-k> :m .-2<CR>==
-inoremap <A-j> <Esc>:m .+1<CR>==gi
-inoremap <A-k> <Esc>:m .-2<CR>==gi
-vnoremap <A-j> :m '>+1<CR>gv=gv
-vnoremap <A-k> :m '<-2<CR>gv=gv
+ 
+" Move 1 more lines up or down in normal and visual selection modes.
+nnoremap K :m .-2<CR>==
+nnoremap J :m .+1<CR>==
+vnoremap K :m '<-2<CR>gv=gv
+vnoremap J :m '>+1<CR>gv=gv
+
+
 
 "==compile"
 map <F1> : !g++ % && ./a.out <CR>
@@ -323,9 +325,8 @@ nnoremap cpp i#include<bits/stdc++.h><Esc>o#define ll   long long<Esc>o<Esc>o#de
 
 nnoremap cpt i#include<bits/stdc++.h><Esc>o#define ll   long long<Esc>o<Esc>o#define fastread()  (ios_base:: sync_with_stdio(false),cin.tie(NULL));<Esc>ousing namespace std;<Esc>o<CR>int main(){<Esc>ofastread();<Esc>o<Esc>oreturn 0;<Esc>o}<Esc>kki
 
-"https://medium.com/@akashrrao/how-i-use-vim-for-competitive-programming-1f0fc96682e0"
 
- 
+
 
 
 " disable autoindent when pasting text
