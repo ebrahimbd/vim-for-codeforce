@@ -10,3 +10,15 @@ wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/DroidSansM
 unzip DroidSansMono.zip -d ~/.fonts
 fc-cache -fv
 echo "done!"
+
+
+
+# write content below into ~/.profile, or ~/.bash_profile
+
+# if running bash
+if [ -n "$BASH_VERSION" ]; then
+    # include .bashrc if it exists
+    if [ -f "$HOME/.bashrc" ]; then
+    . "$HOME/.bashrc"
+    fi
+fi
