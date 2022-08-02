@@ -116,8 +116,17 @@ endtry
 
 " lightline
 let g:lightline = { 'colorscheme': 'default' }
-let g:indentLine_setColors = 0
-let g:airline#extensions#tabline#enabled = 1
+ 
+ 
+let g:airline#extensions#tabline#formatter = 'default'
+
+
+
+let g:indentLine_char = '┊'
+
+"for errro handale q^[\^[[?12;44y weird escape sequence"
+
+let g:airline_section_c='%{expand("%:~:.")} %{strftime("%b %d %Y %H:%M", getftime(expand("%")))}'
  
 
 map <F5> :NERDTreeToggle<CR>
@@ -165,6 +174,16 @@ set number
 highlight LineNr  ctermfg=LightBlue ctermbg=NONE gui=NONE guifg=#ff80ff guibg=NONE
 
 
+let g:ale_sign_error = '⛔️'
+let g:ale_set_highlights = 0
+highlight clear ALEErrorSign
+highlight clear ALEWarningSign
+
+
+let g:gitgutter_sign_added = '➕️'
+let g:gitgutter_sign_modified = '➖️'
+
+
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -187,6 +206,8 @@ autocmd FileType javascript setlocal tabstop=2 shiftwidth=2 softtabstop=2
 let g:AutoPairsFlyMode = 0
 let g:AutoPairsShortcutBackInsert = '<M-b>'
 
+"Disable VIM matching parenthesis highlighting"
+let g:loaded_matchparen=1
 
 
 " word movement
@@ -275,10 +296,6 @@ nmap <leader>[ :bp!<CR>
 nmap <leader>] :bn!<CR>
 nmap <leader>x :bp<bar>bd#<CR>
 
-
-
-" restore place in file from previous session
-autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
 
  
