@@ -24,6 +24,20 @@ git clone https://github.com/ebrahimbd/vim-for-codeforce &&  cd "vim-for-codefor
 
  
 ```
+ ## Demo
+ 
+##colorscheme znake " 
+
+![Screenshot from 2022-07-31 21-34-26](https://user-images.githubusercontent.com/67005999/186655135-62fc98cd-2af5-4d9a-9b58-f0b2e3d41ebe.png )
+
+## colorscheme molokai"
+
+![Screenshot from 2022-07-31 21-35-12](https://user-images.githubusercontent.com/67005999/186655149-a903cf5e-3881-405f-882e-4a9557f5a923.png)
+
+## colorscheme gruvbox"
+
+![Screenshot from 2022-07-31 21-35-36](https://user-images.githubusercontent.com/67005999/186655155-37587001-4697-4915-b310-d66c55ac4fd5.png)
+
  
  
 
