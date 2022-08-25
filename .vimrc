@@ -41,12 +41,17 @@ autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
 call plug#begin()
      
     
-    Plug 'vim-airline/vim-airline'
+  
     Plug 'preservim/NERDTree'
+    
     Plug 'Xuyuanp/nerdtree-git-plugin'
+    
     Plug 'kien/ctrlp.vim'
+    
     Plug 'flazz/vim-colorschemes'
+    
     Plug 'ryanoasis/vim-devicons'
+    
     Plug 'tpope/vim-sensible'
  
     "Snippet engines"
@@ -93,7 +98,11 @@ call plug#begin()
 call plug#end()
 
  
+ 
+ 
 let g:ycm_filetype_blacklist  = {'python':1}
+
+
 
 
 " color scheme
@@ -107,27 +116,19 @@ filetype plugin indent on
 "colorscheme molokai"
 "colorscheme gruvbox"
 
+
+
 try 
     set background=dark
-    colorscheme znake"
+    colorscheme molokai"
 catch 
 endtry
 
 
-" lightline
-let g:lightline = { 'colorscheme': 'default' }
  
  
-let g:airline#extensions#tabline#formatter = 'default'
+let g:indentLine_char = '▏'
 
-
-
-let g:indentLine_char = '┊'
-
-"for errro handale q^[\^[[?12;44y weird escape sequence"
-
-let g:airline_section_c='%{expand("%:~:.")} %{strftime("%b %d %Y %H:%M", getftime(expand("%")))}'
- 
 
 map <F5> :NERDTreeToggle<CR>
 nmap <F8> :TagbarToggle<CR>
@@ -180,8 +181,8 @@ highlight clear ALEErrorSign
 highlight clear ALEWarningSign
 
 
-let g:gitgutter_sign_added = '➕️'
-let g:gitgutter_sign_modified = '➖️'
+let g:gitgutter_sign_added = '++'
+let g:gitgutter_sign_modified = '--'
 
 
 set statusline+=%#warningmsg#
@@ -243,7 +244,6 @@ function ToggleMouse()
 endfunction
 
 
-
 " code folding
 set foldmethod=indent
 set foldlevel=99
@@ -298,8 +298,6 @@ nmap <leader>x :bp<bar>bd#<CR>
 
 
 
- 
-
 " ale
 map <C-e> <Plug>(ale_next_wrap)
 map <C-r> <Plug>(ale_previous_wrap)
@@ -311,11 +309,12 @@ map <leader>t :TagbarToggle<CR>
 
 " copy, cut and paste
 vmap <C-c> "+y
-
 vmap <C-x> "+c
 vmap <C-v> c<ESC>"+p
 imap <C-v> <ESC>"+pa
 
+
+"template for c++"
 nnoremap cpp i#include<bits/stdc++.h><Esc>o#define ll   long long<Esc>o<Esc>o#define fastread()  (ios_base:: sync_with_stdio(false),cin.tie(NULL));<Esc>ousing namespace std;<Esc>o<CR>int main(){<Esc>ofastread();<Esc><Esc>oint t;<Esc>o cin>>t; <CR>while(t--){<Esc>o<Esc>o}<Esc>oreturn 0;<Esc>o}<Esc>kki
 
 nnoremap cpt i#include<bits/stdc++.h><Esc>o#define ll   long long<Esc>o<Esc>o#define fastread()  (ios_base:: sync_with_stdio(false),cin.tie(NULL));<Esc>ousing namespace std;<Esc>o<CR>int main(){<Esc>ofastread();<Esc>o<Esc>oreturn 0;<Esc>o}<Esc>kki
@@ -355,6 +354,9 @@ let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/]\.(git|hg|svn|vendor/bundle/*\|vendor/cache/*\|public\|spec)$',
   \ 'file': '\v\.(exe|so|dll|swp|log|jpg|png|json)$',
   \ }
+
+
+
 
 " ----------------------------------------------------------------------------
 " YouCompleteMe
