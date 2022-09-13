@@ -12,6 +12,7 @@ install () {
 
 if ! [ -x "$(command -v vim)" ]; then
   sudo apt-get update
+  sudo apt-get install vim-gtk3
   sudo apt-get install vim
   install
   exit 1
