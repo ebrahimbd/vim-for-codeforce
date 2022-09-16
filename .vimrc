@@ -194,18 +194,15 @@ let g:AutoPairsShortcutBackInsert = '<M-b>'
 
 
 "Disable VIM matching parenthesis highlighting"
-"let g:loaded_matchparen=1
+let g:loaded_matchparen=1
 
 
+
+
+set nobackup
 
 
 "-------------------Keybinding------------------------------------------
-
-" Move 1 more lines up or down in normal and visual selection modes.
-nnoremap K :m .-2<CR>==
-nnoremap J :m .+1<CR>==
-vnoremap K :m '<-2<CR>gv=gv
-vnoremap J :m '>+1<CR>gv=gv
 
 
 " word movement
@@ -248,6 +245,10 @@ nnoremap <C-j> :sp<CR>
 
 " ---------------New tab-----------------------------------------
 nnoremap <C-n> :tabnew<CR>
+
+" ---------------save tab-----------------------------------------
+ 
+
 " ---------------Move tab----------------------------------------
 nnoremap <C-m> :tabn<CR>
 
@@ -270,7 +271,7 @@ inoremap <leader>; <C-x><C-o>
 map <F1> : !g++ % && ./a.out <CR>
 " save the current file before compiling it, after  executable file name"
 map <F2> :w! <CR>:! clear && g++ % && time ./a.out <CR>
-map <F3> :w! <CR>:! clear && g++ % &&  ./a.out<input.txt>output.txt  && cat output.txt && time <CR>
+map <F3> :w! <CR>:! clear && g++ % && echo "---- Totall time taken ----" && time  ./a.out<input.txt>output.txt  && echo -e "--------------------------- \n   \n" &&  cat output.txt <CR>
 
 
 " ------------------------------------------------------------------
