@@ -10,7 +10,6 @@ vim-plug](https://github.com/junegunn/vim-plug) to install .
 
 
 ```bash
-"must install git"
 sudo apt install git && git clone https://github.com/ebrahimbd/vim-for-codeforce && cd "vim-for-codeforce" && sh install.sh
 ```
 
