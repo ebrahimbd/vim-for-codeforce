@@ -23,6 +23,14 @@ git clone https://github.com/ebrahimbd/vim-for-codeforce &&  cd "vim-for-codefor
 
  
 ```
+
+```bash
+sudo apt install build-essential cmake vim-nox python3-dev
+ 
+```
+```bash
+cd /.vim/bundle/YouCompleteMe python3 install.py --all
+```
  ## Demo
  
 ##colorscheme znake " 
